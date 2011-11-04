@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  caches_page :show
+  caches_action :index, :show
   cache_sweeper :post_sweeper,
                 :only => [:create, :update, :destroy]
                 

@@ -10,7 +10,7 @@ class PostSweeper < ActionController::Caching::Sweeper
   end
   
   def clear_posts_cache(post)
-    expire_page :controller => :posts, :action => :index
-    expire_page :controller => :posts, :action => :show, :id => post
+    expire_action :controller => :posts, :action => :index
+    expire_action :controller => :posts, :action => :show, :id => post
   end
 end
